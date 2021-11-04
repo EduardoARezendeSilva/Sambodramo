@@ -24,10 +24,7 @@ namespace Sambodramo.UI
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            if (txtSambaEnrredo.Text != ""
-                || txtEntrada.Text != "__/__/"
-                || txtNota.Text != ""
-                || cboEscola.SelectedValue.ToString() != "")
+            if (txtSambaEnrredo.Text != "" || txtEntrada.Text != "__/__/" || txtNota.Text != "" || cboEscola.SelectedValue.ToString() != "")
             {
                 txtNota.Text = txtNota.Text.Replace(",", ".");
                 desfileDTO.samba = txtSambaEnrredo.Text;
@@ -44,10 +41,7 @@ namespace Sambodramo.UI
         }
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (txtSambaEnrredo.Text != ""
-                || txtEntrada.Text != "__/__/"
-                || txtNota.Text != ""
-                || cboEscola.SelectedValue.ToString() != "")
+            if (txtSambaEnrredo.Text != "" || txtEntrada.Text != "__/__/" || txtNota.Text != "" || cboEscola.SelectedValue.ToString() != "")
             {
                 txtNota.Text = txtNota.Text.Replace(",", ".");
                 desfileDTO.id_desfile = int.Parse(txtSambaEnrredo.Tag.ToString());
