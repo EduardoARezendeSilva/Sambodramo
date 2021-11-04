@@ -1,9 +1,0 @@
-H:\Sambodramo\Sambodramo\bin\Debug\Sambodramo.exe.config
-H:\Sambodramo\Sambodramo\bin\Debug\Sambodramo.exe
-H:\Sambodramo\Sambodramo\bin\Debug\Sambodramo.pdb
-H:\Sambodramo\Sambodramo\obj\Debug\Sambodramo.csprojAssemblyReference.cache
-H:\Sambodramo\Sambodramo\obj\Debug\Sambodramo.Properties.Resources.resources
-H:\Sambodramo\Sambodramo\obj\Debug\Sambodramo.Frm_Escolas.resources
-H:\Sambodramo\Sambodramo\obj\Debug\Sambodramo.csproj.GenerateResource.cache
-H:\Sambodramo\Sambodramo\obj\Debug\Sambodramo.exe
-H:\Sambodramo\Sambodramo\obj\Debug\Sambodramo.pdb
