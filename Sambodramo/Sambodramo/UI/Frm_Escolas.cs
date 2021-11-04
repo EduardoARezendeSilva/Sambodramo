@@ -23,22 +23,34 @@ namespace Sambodramo
         }
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            escolasDTO.nome = txtNome.Text;
-            escolasDTO.ano = txtAno.Text;
-            escolasDTO.proprietario = txtProprietario.Text;
-
-            escolasBLL.Inserir(escolasDTO);
-            listar();
+            if (txtNome.Text != "" || txtAno.Text != "____" || txtProprietario.Text != "")
+            {
+                escolasDTO.nome = txtNome.Text;
+                escolasDTO.ano = txtAno.Text;
+                escolasDTO.proprietario = txtProprietario.Text;
+                escolasBLL.Inserir(escolasDTO);
+                listar();
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos!!!");
+            }
         }
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            escolasDTO.id = int.Parse(txtNome.Tag.ToString());
-            escolasDTO.nome = txtNome.Text;
-            escolasDTO.ano = txtAno.Text;
-            escolasDTO.proprietario = txtProprietario.Text;
-
-            escolasBLL.Alterar(escolasDTO);
-            listar();
+            if (txtNome.Text != "" || txtAno.Text != "____" || txtProprietario.Text != "")
+            {
+                escolasDTO.id = int.Parse(txtNome.Tag.ToString());
+                escolasDTO.nome = txtNome.Text;
+                escolasDTO.ano = txtAno.Text;
+                escolasDTO.proprietario = txtProprietario.Text;
+                escolasBLL.Alterar(escolasDTO);
+                listar();
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos!!!");
+            }
         }
         private void btnExcluir_Click(object sender, EventArgs e)
         {
@@ -53,7 +65,10 @@ namespace Sambodramo
         }
         private void grdEscolas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && grdEscolas.Rows[e.RowIndex].Cells[0].Value.ToString() != ""
+                && grdEscolas.Rows[e.RowIndex].Cells[1].Value.ToString() != ""
+                && grdEscolas.Rows[e.RowIndex].Cells[2].Value.ToString() != ""
+                && grdEscolas.Rows[e.RowIndex].Cells[3].Value.ToString() != "")
             {
                 txtNome.Tag = grdEscolas.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txtNome.Text = grdEscolas.Rows[e.RowIndex].Cells[1].Value.ToString();

@@ -51,6 +51,7 @@
             this.grdDesfile.Name = "grdDesfile";
             this.grdDesfile.Size = new System.Drawing.Size(598, 272);
             this.grdDesfile.TabIndex = 20;
+            this.grdDesfile.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDesfile_CellClick);
             // 
             // btnExcluir
             // 

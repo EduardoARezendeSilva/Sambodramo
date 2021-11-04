@@ -24,22 +24,44 @@ namespace Sambodramo.UI
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            desfileDTO.samba = txtSambaEnrredo.Text;
-            desfileDTO.entrada = txtEntrada.Text.Substring(6, 4) + txtEntrada.Text.Substring(2, 4) + txtEntrada.Text.Substring(0, 2);
-            desfileDTO.nota = txtNota.Text;
-            desfileDTO.id_escola = int.Parse(cboEscola.SelectedValue.ToString());
-            desfileBLL.Inserir(desfileDTO);
-            listar();
+            if (txtSambaEnrredo.Text != ""
+                || txtEntrada.Text != "__/__/"
+                || txtNota.Text != ""
+                || cboEscola.SelectedValue.ToString() != "")
+            {
+                txtNota.Text = txtNota.Text.Replace(",", ".");
+                desfileDTO.samba = txtSambaEnrredo.Text;
+                desfileDTO.entrada = txtEntrada.Text.Substring(6, 4) + txtEntrada.Text.Substring(2, 4) + txtEntrada.Text.Substring(0, 2);
+                desfileDTO.nota = txtNota.Text;
+                desfileDTO.id_escola = int.Parse(cboEscola.SelectedValue.ToString());
+                desfileBLL.Inserir(desfileDTO);
+                listar();
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos!!!");
+            }
         }
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            desfileDTO.id_desfile = int.Parse(txtSambaEnrredo.Tag.ToString());
-            desfileDTO.samba = txtSambaEnrredo.Text;
-            desfileDTO.entrada = txtEntrada.Text.Substring(6, 4) + txtEntrada.Text.Substring(2, 4) + txtEntrada.Text.Substring(0, 2);
-            desfileDTO.nota = txtNota.Text;
-            desfileDTO.id_escola = int.Parse(cboEscola.SelectedValue.ToString());
-            desfileBLL.Alterar(desfileDTO);
-            listar();
+            if (txtSambaEnrredo.Text != ""
+                || txtEntrada.Text != "__/__/"
+                || txtNota.Text != ""
+                || cboEscola.SelectedValue.ToString() != "")
+            {
+                txtNota.Text = txtNota.Text.Replace(",", ".");
+                desfileDTO.id_desfile = int.Parse(txtSambaEnrredo.Tag.ToString());
+                desfileDTO.samba = txtSambaEnrredo.Text;
+                desfileDTO.entrada = txtEntrada.Text.Substring(6, 4) + txtEntrada.Text.Substring(2, 4) + txtEntrada.Text.Substring(0, 2);
+                desfileDTO.nota = txtNota.Text;
+                desfileDTO.id_escola = int.Parse(cboEscola.SelectedValue.ToString());
+                desfileBLL.Alterar(desfileDTO);
+                listar();
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos!!!");
+            }
         }
         private void btnExcluir_Click(object sender, EventArgs e)
         {
@@ -51,9 +73,13 @@ namespace Sambodramo.UI
         {
             limpar();
         }
-        private void grddesfile_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void grdDesfile_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && grdDesfile.Rows[e.RowIndex].Cells[0].Value.ToString() != "" 
+                && grdDesfile.Rows[e.RowIndex].Cells[1].Value.ToString() != "" 
+                && grdDesfile.Rows[e.RowIndex].Cells[2].Value.ToString() != "" 
+                && grdDesfile.Rows[e.RowIndex].Cells[3].Value.ToString() != "" 
+                && grdDesfile.Rows[e.RowIndex].Cells[4].Value.ToString() != "")
             {
                 txtSambaEnrredo.Tag = grdDesfile.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txtSambaEnrredo.Text = grdDesfile.Rows[e.RowIndex].Cells[1].Value.ToString();
