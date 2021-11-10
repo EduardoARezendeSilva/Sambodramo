@@ -12,6 +12,7 @@ namespace Sambodramo.UI
 {
     public partial class Frm_Inicial : Form
     {
+        public string usuario;
         public Frm_Inicial()
         {
             InitializeComponent();
@@ -21,12 +22,14 @@ namespace Sambodramo.UI
         {
             Frm_Escolas frm_Escolas = new Frm_Escolas();
             frm_Escolas.Show();
+            frm_Escolas.Text = $"Escolas - {usuario}";
         }
 
         private void btndesfile_Click(object sender, EventArgs e)
         {
             Frm_Desfile frm_Desfile = new Frm_Desfile();
             frm_Desfile.Show();
+            frm_Desfile.Text = $"Desfile - {usuario}";
         }
     }
 }

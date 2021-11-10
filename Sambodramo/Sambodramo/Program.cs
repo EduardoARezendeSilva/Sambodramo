@@ -16,7 +16,7 @@ namespace Sambodramo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UI.Frm_Inicial());
+            Application.Run(new UI.Frm_Login());
         }
     }
 }

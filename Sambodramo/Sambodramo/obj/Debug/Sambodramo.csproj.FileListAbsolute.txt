@@ -46,3 +46,4 @@ H:\Sambodramo\Sambodramo\Sambodramo\obj\Debug\Sambodramo.csproj.GenerateResource
 H:\Sambodramo\Sambodramo\Sambodramo\obj\Debug\Sambodramo.csproj.CopyComplete
 H:\Sambodramo\Sambodramo\Sambodramo\obj\Debug\Sambodramo.exe
 H:\Sambodramo\Sambodramo\Sambodramo\obj\Debug\Sambodramo.pdb
+H:\Sambodramo\Sambodramo\Sambodramo\obj\Debug\Sambodramo.UI.Frm_Login.resources
