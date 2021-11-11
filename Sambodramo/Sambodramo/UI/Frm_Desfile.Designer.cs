@@ -132,6 +132,7 @@
             this.txtNota.Name = "txtNota";
             this.txtNota.Size = new System.Drawing.Size(100, 20);
             this.txtNota.TabIndex = 11;
+            this.txtNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNota_KeyPress);
             // 
             // lblEscola
             // 

@@ -111,5 +111,13 @@ namespace Sambodramo.UI
             cboEscola.SelectedIndex = -1;
 
         }
+
+        private void txtNota_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Char.IsLetter(e.KeyChar)) || (Char.IsWhiteSpace(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
