@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -47,6 +49,37 @@ namespace Sambodramo.UI
             {
                 MessageBox.Show("Preencha todos os campos!!!");
             }
-}
+        }
+
+        private void lnkSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (txtEmail.Text != "")
+            {
+                loginDTO.email = txtEmail.Text;
+
+                DataTable dt = loginBLL.Senha(loginDTO);
+
+                if (dt.Rows.Count > 0)
+                {
+                    var cliente = new SmtpClient("smtp.gmail.com", 587)
+                    {
+                        Credentials = new NetworkCredential("11900555@aluno.cotemig.com.br", "kujsarwredhowfhd"),
+                        EnableSsl = true
+                    };
+
+                    cliente.Send("11900555@aluno.cotemig.com.br", dt.Rows[0].ItemArray[2].ToString(), "Recupera senha", $"Sua senha e: {dt.Rows[0].ItemArray[3].ToString()}");
+
+                    MessageBox.Show("Email enviado com sucesso", "Email", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show("Dados Para login invalido!!!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Preencha o campo email para recuperar a senha!!!");
+            }
+        }
     }
 }

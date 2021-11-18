@@ -18,5 +18,11 @@ namespace Sambodramo.CODE.BLL
             string sql = $"select * from login where email = '{loginDTO.email}' and senha = '{loginDTO.senha}'";
             return conexao.ExecutarConsulta(sql);
         }
+
+        public DataTable Senha(LoginDTO loginDTO)
+        {
+            string sql = $"select * from login where email = '{loginDTO.email}'";
+            return conexao.ExecutarConsulta(sql);
+        }
     }
 }

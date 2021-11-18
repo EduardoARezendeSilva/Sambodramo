@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.lnkSenha = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,11 +110,23 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // lnkSenha
+            // 
+            this.lnkSenha.AutoSize = true;
+            this.lnkSenha.Location = new System.Drawing.Point(467, 273);
+            this.lnkSenha.Name = "lnkSenha";
+            this.lnkSenha.Size = new System.Drawing.Size(91, 13);
+            this.lnkSenha.TabIndex = 8;
+            this.lnkSenha.TabStop = true;
+            this.lnkSenha.Text = "Recuperar Senha";
+            this.lnkSenha.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSenha_LinkClicked);
+            // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 298);
+            this.Controls.Add(this.lnkSenha);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -140,5 +153,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.LinkLabel lnkSenha;
     }
 }
